@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
-import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom'
-import store from './store'
-import Login from './login'
-import UserPage from './user-page'
+/* eslint-disable react/display-name */
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
+import store from './store';
+import Login from './login';
+import UserPage from './user-page';
 
 // We've taken a class component and wrapped it in
 // `withRouter` so that it receives `history` from react-router-dom
@@ -19,12 +20,12 @@ const Main = withRouter(class extends Component {
   render () {
     return (
       <Switch>
-        <Route path='/home' component={UserPage} />
+        <Route path="/home" component={UserPage} />
         <Route component={Login} />
       </Switch>
     )
   }
-})
+});
 
 ReactDOM.render(
   <Provider store={store}>
@@ -33,4 +34,4 @@ ReactDOM.render(
     </Router>
   </Provider>,
   document.getElementById('app')
-)
+);
